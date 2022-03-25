@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# ON START #
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## In terminal
+  CD into client application folder and run `npm i` then run`npm start`
+  CD into client api folder (i.e, recruitment-assignment-frontend-master) and run `npm i` then run`npm start`
 
-## Available Scripts
+## In file directory
+  Right click client application folder and run `npm i` then run`npm start`
+  Right click client api folder (i.e, recruitment-assignment-frontend-master) and run `npm i` then run`npm start`
 
-In the project directory, you can run:
+client app - directory
+  # actions
+    # episodes
+  # components
+    # Acast
+    # AcastPodCastContentDisplay
+    # AcastPodCastMediaController
+    # AcastPodcastPlayer
+  # reducers
+    # episodesReducer
+  # selectors
+    # selectAdMarkersFromShortaudio
+    # selectNonAdMarkersFromShortaudio
+  # store
+    # configureStore
 
-### `npm start`
+# actions # episodes
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+episodes.js is responsible for fetching data from the server and dispatching actions to the reducer
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# components
+  # Acast.js
 
-### `npm test`
+This component is responsible for providing the application with the <AudioPlayerProvider> and dispatching the initial fetch call to the server.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# components
+  # AcastPodcastContentDisplay
 
-### `npm run build`
+AcastPodcastContentDisplay is responsible for rendering the content, images, and advertisement buttons on the podcast
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# components
+  # AcastPodcastMediaController
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+AcastPodcastMediaController handles the media playback functionality of the podcast (e.g, play, pause, forward, rewind, scrubbing).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# components
+  # AcastPodcastPlayer
 
-### `npm run eject`
+AcastPodcastPlayer is the parent component which loads audio files using the <AudioPlayerProvider> and renders the child components while supplying them with appropriate props.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# reducers
+  # episodesReducer
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+episodesReducer determines what data Redux while provide to the application State based on the action it receives (e.g, 'FETCH_EPISODES').
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# selectors
+  # selectAdMarkersFromShortaudio
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+selectAdMarkersFromShortaudio is a function which returns an object containing data regarding ads at specific time frames throughout the audio file playback.
 
-## Learn More
+# selectors
+  # selectNonAdMarkersFromShortaudio
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+selectNonAdMarkersFromShortaudio is a function which returns an object containing data regarding non-ad specific timeframes throughout the audio file playback
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# store
+  # configureStore
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+configureStore is where the application State is stored. This is accessible throughout the whole application with specific functions (i.e, useSelector)
